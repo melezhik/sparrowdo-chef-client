@@ -2,13 +2,15 @@
 
 Run chef client on remote host using Sparrowdo.
 
+# Travis build status
+
+[![Build Status](https://travis-ci.org/melezhik/sparrowdo-chef-client.svg)](https://travis-ci.org/melezhik/sparrowdo-chef-client)
+
+
 # INSTALL
 
     $ panda install Sparrowdo::Chef::Client
 
-# Travis build status
-
-[![Build Status](https://travis-ci.org/melezhik/sparrowdo-chef-client.svg)](https://travis-ci.org/melezhik/sparrowdo-chef-client)
 
 # USAGE
 
