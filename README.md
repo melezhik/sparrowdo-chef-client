@@ -37,7 +37,7 @@ Sets log level for chef client run. Default level is `info`. Optional.
   
 ## attributes
 
-Sets chef node attributes. From the Perl6 point of view it's just a Hash or parameters. 
+Sets chef node attributes. From the Perl6 point of view it's just a Hash of parameters. 
 
 For example:
 
