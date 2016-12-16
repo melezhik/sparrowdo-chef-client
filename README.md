@@ -8,7 +8,7 @@ Run chef client on remote host using Sparrowdo.
 
 # USAGE
 
-    $ cat sparrow file
+    $ cat sparrowfile
 
     module_run 'Chef::Client', %(
       run-list => [
@@ -42,6 +42,8 @@ For example:
       }
     }
 
+
+Optional. Default value is empty Hash.
 
 # Author
 
