@@ -5,7 +5,8 @@
   "description" : "Sparrowdo module to manage chef users",
   "authors" : [ "Alexey Melezhik" ],
   "depends"     : [
-                    "Sparrowdo"
+                    "Sparrowdo",
+                    "JSON::Tiny"  
                   ],
   "source-type" : "git",
   "support" : {
