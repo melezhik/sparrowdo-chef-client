@@ -51,6 +51,12 @@ For example:
 
 Optional. Default value is empty Hash.
 
+## force-formatter
+
+If set to True then chef-client gets called with --force-formatter flag. Optional.
+Default value is True.
+
+
 # Author
 
 [Alexey Melezhik](melezhik@gmail.com)
