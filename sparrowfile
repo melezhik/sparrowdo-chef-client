@@ -1,7 +1,6 @@
 module_run 'Chef::Client', %(
   run-list => [
-    "recipe[foo::bar]",
-    "role[baz]"
+    "recipe[test-cookbook]",
   ],
   log-level => 'info',
   attributes => %(
@@ -10,6 +9,6 @@ module_run 'Chef::Client', %(
     )
   ),
   local-mode => True ,
-  chef-repo-path => '/var/chef/'  
+  chef-repo-path => '/var/chef/cookbooks'  
 );
 
