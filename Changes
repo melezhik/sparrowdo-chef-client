@@ -1,3 +1,9 @@
+Revision history for Sparrowdo::Chef::Client
+
+{{$NEXT}}
+
+  - make if work with the latest version of Sparrowdo
+  
 # 0.0.3 - 2017-Sep-01
 
 Issue #1

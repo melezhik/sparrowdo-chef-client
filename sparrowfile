@@ -1,4 +1,4 @@
-module_run 'Chef::Client', %(
+module-run 'Chef::Client', %(
   run-list => [
     "recipe[test-cookbook]",
   ],

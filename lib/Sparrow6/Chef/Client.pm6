@@ -1,8 +1,8 @@
 use v6;
 
-unit module Sparrowdo::Chef::Client;
+unit module Sparrow6::Chef::Client;
 
-use Sparrowdo;
+use Sparrow6::DSL;
 use JSON::Tiny;
 
 our sub tasks (%args) {
@@ -19,15 +19,10 @@ our sub tasks (%args) {
   } 
   
 
-  task_run %(
-    task => "set up chef run list and attributes",
-    plugin => "file",
-    parameters => %(
+  task-run "set up chef run list and attributes", "file", %(
       target  => "/tmp/chef.json",
       content => ( to-json %chef-json ),
-    ),
-  );
-  
+  );  
   my $log-level = %args<log-level> || 'info';
 
   my $chef-run-command = '';
@@ -42,14 +37,9 @@ our sub tasks (%args) {
 
   $chef-run-command ~= " --local-mode"  if %args<local-mode>;
 
-  task_run %(
-    task => "run chef-client",
-    plugin => "bash",
-    parameters => %(
-      command => $chef-run-command
-    ),
+  task-run "run chef-client", "bash",%(
+    command => $chef-run-command
   );
-  
   
 }
 
