@@ -1,20 +1,28 @@
 {
-  "perl"        : "6.*",
-  "name"        : "Sparrowdo::Chef::Client",
-  "version"     : "0.1.0",
+  "authors" : [
+    "Alexey Melezhik"
+  ],
+  "build-depends" : [ ],
+  "depends" : [
+    "Sparrow6",
+    "JSON::Tiny"
+  ],
   "description" : "Sparrowdo module to manage chef users",
-  "authors" : [ "Alexey Melezhik" ],
-  "depends"     : [
-                    "Sparrow6",
-                    "JSON::Tiny"
-                  ],
-  "source-type" : "git",
-  "support" : {
-        "bugtracker" : "https://github.com/melezhik/sparrowdo-chef-client/issues",
-        "source" : "https://github.com/melezhik/sparrowdo-chef-client.git"
-    },
-   "provides" : {
-        "Sparrow6::Chef::Client" : "lib/Sparrow6/Chef/Client.pm6"
+  "license" : "NOASSERTION",
+  "name" : "Sparrowdo::Chef::Client",
+  "perl" : "6.*",
+  "provides" : {
+    "Sparrowdo::Chef::Client" : "lib/Sparrowdo/Chef/Client.pm6",
+    "Sparrow6::Chef::Client" : "lib/Sparrow6/Chef/Client.pm6"
   },
-  "source-url"  : "https://github.com/melezhik/sparrowdo-chef-client.git"
+  "resources" : [ ],
+  "source-type" : "git",
+  "source-url" : "https://github.com/melezhik/sparrowdo-chef-client.git",
+  "support" : {
+    "bugtracker" : "https://github.com/melezhik/sparrowdo-chef-client/issues",
+    "source" : "https://github.com/melezhik/sparrowdo-chef-client.git"
+  },
+  "tags" : [ ],
+  "test-depends" : [ ],
+  "version" : "0.1.0"
 }

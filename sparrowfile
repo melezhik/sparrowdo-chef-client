@@ -1,11 +1,12 @@
 module-run 'Chef::Client', %(
+  dry-run => True,
   run-list => [
     "recipe[test-cookbook]",
   ],
   log-level => 'info',
   attributes => %(
     foo => %(
-      bar => [ 1, 2 , 3]
+      bar => [1, 2, 3]
     )
   ),
   local-mode => True ,

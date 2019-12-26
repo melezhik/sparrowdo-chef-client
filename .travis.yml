@@ -1,14 +1,25 @@
-services:
-  - docker
+language: perl
+
 env:
-  - PATH=.ducky/:$PATH
+  global:
+    - PATH=/usr/local/bin:/opt/rakudo-pkg/bin/:/home/travis/.perl6/bin:$PATH
+    - SP6_REPO=file:///tmp/repo
+    #- SP6_REPO=http://repo.southcentralus.cloudapp.azure.com
 
 before_install:
+  - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 379CE192D401AB61
+  - echo "deb https://dl.bintray.com/nxadm/rakudo-pkg-debs `lsb_release -cs` main" | sudo tee -a /etc/apt/sources.list.d/rakudo-pkg.list 
+  - sudo apt-get update && sudo apt-get install rakudo-pkg
 
-  - git clone https://github.com/melezhik/ducky.git .ducky
-  - docker pull melezhik/centos7
-  - docker run --privileged --name centos7 --entrypoint  init -v $PWD:/var/ducky -v /sys/fs/cgroup:/sys/fs/cgroup:ro  -d  melezhik/centos7:latest
-  - ducky.bash centos7 
+
+install:
+    - zef install --/test  .
+    - zef install --/test https://github.com/melezhik/Tomty.git
+    - git clone https://github.com/melezhik/sparrow-plugins && s6 --repo-init /tmp/repo
+    - cd sparrow-plugins && git checkout master && git pull origin master
+    - find -maxdepth 2 -mindepth 2 -name sparrow.json -execdir s6 --upload \;
+    - cd ../ 
 
 script:
-  - echo 
+  - tom --init  
+  - tom test

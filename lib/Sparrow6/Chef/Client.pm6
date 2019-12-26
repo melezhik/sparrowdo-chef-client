@@ -1,12 +1,16 @@
 use v6;
 
-unit module Sparrow6::Chef::Client:ver<0.0.1>;
+unit module Sparrow6::Chef::Client;
 
 use Sparrow6::DSL;
 use JSON::Tiny;
 
 our sub tasks (%args) {
 
+  if %args<dry-run> {
+    bash "echo 'would run chef-client. dry run is on'";
+    return
+  }
 
   my %chef-json =  Hash.new;
 
@@ -23,6 +27,7 @@ our sub tasks (%args) {
       target  => "/tmp/chef.json",
       content => ( to-json %chef-json ),
   );  
+
   my $log-level = %args<log-level> || 'info';
 
   my $chef-run-command = '';
