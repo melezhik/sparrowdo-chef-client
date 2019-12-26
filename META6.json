@@ -12,8 +12,8 @@
   "name" : "Sparrowdo::Chef::Client",
   "perl" : "6.*",
   "provides" : {
-    "Sparrowdo::Chef::Client" : "lib/Sparrowdo/Chef/Client.pm6",
-    "Sparrow6::Chef::Client" : "lib/Sparrow6/Chef/Client.pm6"
+    "Sparrow6::Chef::Client" : "lib/Sparrow6/Chef/Client.pm6",
+    "Sparrowdo::Chef::Client" : "lib/Sparrowdo/Chef/Client.pm6"
   },
   "resources" : [ ],
   "source-type" : "git",
