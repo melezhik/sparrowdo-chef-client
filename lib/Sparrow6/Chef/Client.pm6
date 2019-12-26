@@ -1,6 +1,6 @@
 use v6;
 
-unit module Sparrow6::Chef::Client;
+unit module Sparrow6::Chef::Client:ver<0.0.1>;
 
 use Sparrow6::DSL;
 use JSON::Tiny;
